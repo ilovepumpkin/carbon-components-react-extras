@@ -1,0 +1,41 @@
+.toolBar{
+	width:100%;
+	height: 40px;
+	margin: 25px 0 15px 0;
+}
+
+.searchInput{
+	float: right;
+	width:100%;
+}
+
+.sortIcon{
+	margin-left:5px;
+}
+
+.sortableHeader{
+	cursor: pointer;
+}
+
+.unsortableHeader{
+	
+}
+
+.buttonsContainer{
+	float:left;
+	display: flex;
+}
+
+.tableButton{
+	margin-right:10px;
+}
+
+.tableContainer{
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.tableOuter{
+	height: 100%;
+}

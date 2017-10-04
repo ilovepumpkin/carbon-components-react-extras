@@ -1,0 +1,25 @@
+{
+  "name": "carbon-components-react-extras",
+  "version": "0.1.0",
+  "description": "This repository provides the extra carbon react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilovepumpkin/carbon-components-react-extras.git"
+  },
+  "keywords": [
+    "react",
+    "carbon",
+    "carbon-components",
+    "carbon-components-extra"
+  ],
+  "author": "shenrui@cn.ibm.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilovepumpkin/carbon-components-react-extras/issues"
+  },
+  "homepage": "https://github.com/ilovepumpkin/carbon-components-react-extras#readme"
+}
