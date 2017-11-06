@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - '6'
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+
+script:
+  - yarn ci-check
+
+after_success:
+  - yarn semantic-release
+
+branches:
+  on:
+    branch: master

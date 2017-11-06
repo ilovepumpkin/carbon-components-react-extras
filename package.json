@@ -4,9 +4,19 @@
   "description": "This repository provides the extra carbon react components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest",
+    "storybook": "start-storybook -p 9000",
+    "build-storybook": "build-storybook",
+    "ci-check": "npm run lint && npm run test && npm run test-ssr",
+    "lint": "eslint {components,internal}/**",
+    "test-ssr": "npm run build && node server-side-rendering-tests/*.js",
+    "prepublish": "npm run build",
+    "build": "node scripts/build.js",
+    "commitmsg": "validate-commit-msg",
+    "commit": "git cz",
+    "start": "npm run storybook",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "prettier": "prettier --write **/*.js"
   },
   "repository": {
     "type": "git",
@@ -77,6 +87,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^6.0.5",
+    "semantic-release": "^8.2.0",
     "style-loader": "^0.13.2",
     "url-loader": "^0.5.7",
     "victory": "^0.19.0",
