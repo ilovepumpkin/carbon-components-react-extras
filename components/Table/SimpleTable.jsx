@@ -1,36 +1,12 @@
-import React, {
-  PureComponent
-} from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import {
-  Table,
-  TableHead,
-  TableRow,
-  TableHeader,
-  TableBody,
-  TableData,
-  ToolbarSearch,
-  Loading
-} from 'carbon-components-react';
+import { Table, TableHead, TableRow, TableHeader, TableBody, TableData, ToolbarSearch, Loading } from 'carbon-components-react';
 import styles from './SimpleTable.css'
 
 import MessageBox from '../MessageBox/MessageBox'
 
 import classNames from 'classnames';
 
-/*
-headers:[
-  {"key":"name","label":"Label"},
-  {"key":"age","label":"Age"},
-  {"key":"sex","label":"Sex"}
-]
-
-data:[
-  {"key":"row1","name":"Tom","age":13,"sex":"male"},
-  {"key":"row2","name":"Mike","age":18,"sex":"male"},
-  {"key":"row3","name":"Jane","age":15,"sex":"female"}
-]
-*/
 class SimpleTable extends PureComponent {
 
   constructor(props) {
@@ -46,14 +22,16 @@ class SimpleTable extends PureComponent {
       this.state["sortHeader"] = temp[0]
       this.state["sortDir"] = temp[1]
     }
-  };
+  }
+  ;
 
   static propTypes = {
     searchable: PropTypes.bool,
     sortable: PropTypes.bool,
     headers: PropTypes.array.isRequired,
     data: PropTypes.array,
-    isLoading: PropTypes.bool
+    isLoading: PropTypes.bool,
+    className: PropTypes.string
   };
 
   static defaultProps = {
@@ -69,7 +47,7 @@ class SimpleTable extends PureComponent {
     })
   }
 
-  sortHeader = (evt) => {
+  sortHeader=(evt) => {
     const headerKey = evt.target.dataset.key
 
     let sortDir = null;
@@ -85,7 +63,7 @@ class SimpleTable extends PureComponent {
     })
   }
 
-  sortTableData = (tableData, headers) => {
+  sortTableData=(tableData, headers) => {
     let sortHeader = this.state.sortHeader
     const sortDir = this.state.sortDir
 
@@ -150,7 +128,7 @@ class SimpleTable extends PureComponent {
     }
 
     let tableHeader = (
-      <TableHead>
+    <TableHead>
         <TableRow>
         {
     visibleHeaders.map(function(header) {
@@ -172,7 +150,7 @@ class SimpleTable extends PureComponent {
     )
 
     let tableBody = (
-      <TableBody>
+    <TableBody>
            {
     tableData.map(function(row) {
       return (
@@ -214,7 +192,7 @@ class SimpleTable extends PureComponent {
       {notification}
       {toolBar}
       <div className={styles.tableContainer}>
-        <Table className={styles.table}>
+        <Table className={this.props.className}>
             {tableHeader}
             {tableBody}
         </Table>
@@ -223,4 +201,4 @@ class SimpleTable extends PureComponent {
 
   };
 }
-module.exports = SimpleTable
+export default SimpleTable
