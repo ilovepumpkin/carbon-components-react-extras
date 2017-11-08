@@ -29,7 +29,7 @@ class SimpleTable extends PureComponent {
     searchable: PropTypes.bool,
     sortable: PropTypes.bool,
     headers: PropTypes.array.isRequired,
-    data: PropTypes.array,
+    data: PropTypes.array.isRequired,
     isLoading: PropTypes.bool,
     className: PropTypes.string
   };
@@ -180,7 +180,7 @@ class SimpleTable extends PureComponent {
       {this.props.searchable && searchInput}
     </div> : null;
 
-    const loading = this.props.isLoading ? <Loading /> : null;
+    const loading = this.props.isLoading ? <Loading/> : null;
 
     const notification = <MessageBox
     data={this.props.error}
