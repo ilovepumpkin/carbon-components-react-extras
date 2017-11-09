@@ -225,7 +225,7 @@ SimpleTable.propTypes = {
   searchable: PropTypes.bool,
   sortable: PropTypes.bool,
   headers: PropTypes.array.isRequired,
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
   isLoading: PropTypes.bool,
   className: PropTypes.string
 };
