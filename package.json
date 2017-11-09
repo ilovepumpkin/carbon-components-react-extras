@@ -2,7 +2,8 @@
   "name": "carbon-components-react-extras",
   "version": "0.1.2",
   "description": "This repository provides the extra carbon react components",
-  "main": "index.js",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 9000",
