@@ -1,6 +1,6 @@
 {
   "name": "carbon-components-react-extras",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "This repository provides the extra carbon react components",
   "main": "index.js",
   "scripts": {
