@@ -2,6 +2,7 @@ const execSync = require('child_process').execSync;
 const inInstall = require('in-publish').inInstall;
 const path = require('path');
 const rimraf = require('rimraf');
+const fs = require('fs');
 
 if (inInstall()) process.exit(0);
 
@@ -20,6 +21,13 @@ const compile = (dirs, type) => {
     exec(`${babelPath} ${dir} --out-dir ${type}/${dir} --ignore __tests__`, {
       BABEL_ENV: type,
     });
+
+    fs.readdirSync(dir).forEach(subdir => {
+      const fullpath = `${dir}/${subdir}`
+      if (fs.readdirSync(fullpath).find(file => file.endsWith(".css"))) {
+        exec(`cp ${fullpath}/*.css ${type}/${fullpath}`)
+      }
+    })
   });
 
   exec(`${babelPath} index.js -d ${type}`, {
