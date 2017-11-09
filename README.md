@@ -20,7 +20,7 @@ SimpleTable provides the following features:
 
 4. Loading icon. The property "isLoading" is used to display/hide Loading icon. 
 
-## Example Code
+## Examples
 [React Storybook](https://github.com/storybooks/react-storybook) is included, so you can pull the code and start the StoryBook server to look at the examples.
 	```
 	$ npm run storybook
